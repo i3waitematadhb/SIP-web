@@ -1,0 +1,46 @@
+/** ---- GridField  ----**/
+.form-check-input {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.grid-field {
+    margin-bottom: 30px;
+}
+.grid-field__table {
+    border: 1px solid #c1cad9;
+    margin-left: 0;
+    margin-right: 0;
+    min-width: 100%;
+}
+.grid-field__title-row {
+    border-bottom: 1px solid #c1cad9;
+    background-color: #fff;
+    color: #43536d;
+}
+.grid-field__title {
+    font-weight: 500;
+    float: left;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+/** ---- Tiny MCE  ----**/
+.mce-menu-item:hover .mce-text {
+    color:#fff !important;
+}
+.mce-content-body p {
+
+}
+/** ---- Field Group  ----**/
+.form__fieldgroup>.form__fieldgroup-item {
+    display: block;
+}
+
+/** ---- Table Header ----**/
+
+.sortablerowsheading {
+    border-top: 1px solid #dbe0e9 !important;
+    background-color: #e9f0f4;
+}

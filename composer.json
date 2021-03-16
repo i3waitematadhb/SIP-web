@@ -1,0 +1,48 @@
+{
+    "name": "silverstripe/installer",
+    "type": "silverstripe-recipe",
+    "description": "The SilverStripe Framework Installer",
+    "require": {
+        "php": "^7.1 || ^8",
+        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/recipe-cms": "4.7.3@stable",
+        "silverstripe/login-forms": "4.3.0@stable",
+        "burnbright/silverstripe-hasonefield": "dev-master",
+        "undefinedoffset/sortablegridfield": "dev-master",
+        "bummzack/sortablefile": "dev-master",
+        "colymba/gridfield-bulk-editing-tools": "dev-master",
+        "unclecheese/display-logic": "dev-master",
+        "tractorcow/silverstripe-colorpicker": "^4@dev",
+        "tractorcow/silverstripe-sliderfield": "dev-master",
+        "symbiote/silverstripe-multivaluefield": "^5.0",
+        "sheadawson/silverstripe-dependentdropdownfield": "dev-master"
+    },
+    "require-dev": {
+        "sminnee/phpunit": "^5.7",
+        "sminnee/phpunit-mock-objects": "^3.4.5"
+    },
+    "extra": {
+        "resources-dir": "_resources",
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mimevalidator.yml",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "web.config"
+        ],
+        "expose" : [
+            "app/css"
+        ]
+    },
+    "config": {
+        "process-timeout": 600
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev"
+}

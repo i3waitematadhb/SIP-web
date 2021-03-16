@@ -1,0 +1,9 @@
+---
+Name: mytheme
+---
+SilverStripe\View\SSViewer:
+  themes:
+    - 'starter'
+    - '$default'
+SilverStripe\i18n\i18n:
+  default_locale: 'en_NZ'
