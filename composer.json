@@ -7,6 +7,8 @@
         "silverstripe/recipe-plugin": "^1.2",
         "silverstripe/recipe-cms": "4.7.3@stable",
         "silverstripe/login-forms": "4.3.0@stable",
+        "cwp/cwp": "dev-master",
+        "cwp/starter-theme": "dev-sip",
         "burnbright/silverstripe-hasonefield": "dev-master",
         "undefinedoffset/sortablegridfield": "dev-master",
         "bummzack/sortablefile": "dev-master",
@@ -43,6 +45,12 @@
     "config": {
         "process-timeout": 600
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/i3waitematadhb/cwp-starter-theme.git"
+        }
+    ],
     "prefer-stable": true,
     "minimum-stability": "dev"
 }
