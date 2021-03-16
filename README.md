@@ -1,10 +1,12 @@
-## Overview
+## To Install ##
 
-Base project folder for a SilverStripe ([http://silverstripe.org](http://silverstripe.org)) installation. Required modules are installed via [http://github.com/silverstripe/recipe-cms](http://github.com/silverstripe/recipe-cms). For information on how to change the dependencies in a recipe, please have a look at [https://github.com/silverstripe/recipe-plugin](https://github.com/silverstripe/recipe-plugin). In addition, installer includes [theme/simple](https://github.com/silverstripe-themes/silverstripe-simple) as a default theme.
+Clone this repository and run `composer update` (It will install all of the website's required vendors)
 
-## Installation ##
+Upload the database "db-sip-web" and modify your `.env` file depending on your configuration
 
-`composer create-project silverstripe/installer my-app`
+Open your terminal and change your directory to yoursite/themes/starter and run `yarn watch`
+
+## More from Silverstripe ##
 
 See [Getting Started](https://docs.silverstripe.org/en/4/getting_started/) for more information.
 
