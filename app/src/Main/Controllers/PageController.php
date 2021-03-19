@@ -30,6 +30,13 @@ namespace {
             // You can include any CSS or JS required by your project here.
             // See: https://docs.silverstripe.org/en/developer_guides/templates/requirements/
             Requirements::css('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+            Requirements::javascript('_resources/themes/starter/dist/js/jquery.min.js');
+            Requirements::javascript('https://platform.twitter.com/widgets.js',
+                [
+                    "async" => true,
+                    "charset"=> "utf-8"
+                ]
+            );
         }
 
         /*
