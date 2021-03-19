@@ -1,8 +1,10 @@
 ## To Install ##
 
-Clone this repository and run `composer update` (It will install all of the website's required vendors)
+Clone this repository and run `composer update` (It will install all the website's required vendors)
 
-Upload the database "db-sip-web" and modify your `.env` file depending on your configuration
+Upload the database "db-sip-web"
+
+Create and Set-up your `.env` file depending on your configuration (Note: Duplicate the existing `.env.example` located in the project folder and rename it as `.env`)
 
 Open your terminal and change your directory to yoursite/themes/starter and run `yarn watch`
 
