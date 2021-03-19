@@ -27,6 +27,10 @@ namespace {
             'BannerImage' => Image::class
         ];
 
+        private static $owns = [
+            'BannerImage'
+        ];
+
         private static $summary_fields = [
             'Name',
             'BannerImage.CMSThumbnail' => 'Image',
