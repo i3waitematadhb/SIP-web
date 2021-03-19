@@ -27,6 +27,7 @@ namespace {
             'Type'          => 'Text',
             'BgColor'       =>  Color::class,
             'BgGradient'    =>  Color::class,
+            'Width'         => 'Text',
             'Archived'      => 'Boolean',
             'Sort'          => 'Int'
         ];
@@ -38,6 +39,7 @@ namespace {
         private static $summary_fields = [
             'Name',
             'DisplayType' => 'Section Type',
+            'Width',
             'Status'
         ];
 
@@ -67,6 +69,7 @@ namespace {
             $fields->addFieldToTab('Root.Settings', ColorField::create('BgColor', 'Background color'));
             $fields->addFieldToTab('Root.Settings', ColorField::create('BgGradient', 'For gradient background color')
                 ->setRightTitle("Adding this will make your section's background color gradient"));
+            $fields->addFieldToTab('Root.Settings', DropdownField::create('Width', 'Section width', SectionWidth::get()->filter('Archived', false)->map('Name', 'Name')));
             $fields->addFieldToTab('Root.Settings', DropdownField::create('AnimationType','Select animation', Animation::get()->filter('Archived', false)->map('Name', 'Name')));
             $fields->addFieldToTab('Root.Main', CheckboxField::create('Archived'));
             $fields->addFieldToTab('Root.Main', HiddenField::create('Sort'));
