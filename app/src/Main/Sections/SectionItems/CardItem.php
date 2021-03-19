@@ -19,12 +19,10 @@ namespace {
 
         private static $db = [
             'Name'        => 'Text',
-            'SectionWidth'=> 'Text',
+            'Width'       => 'Text',
             'Content'     => 'HTMLText',
-            'isBgImage'   => 'Boolean',
             'AnimationType' => 'Text',
             'ExternalLink'  => 'Text',
-            'ShowTitle'  => 'Boolean',
             'Archived'   => 'Boolean',
             'Sort'       => 'Int'
         ];
@@ -38,7 +36,7 @@ namespace {
         private static $summary_fields = [
             'Name',
             'BgImage.CMSThumbnail' => 'Image',
-            'ColumnSize'           => 'Column Size',
+            'Width',
             'Status'
         ];
 
@@ -49,15 +47,13 @@ namespace {
             $fields->addFieldToTab('Root.Main', ReadonlyField::create('ParentRO', 'Parent', $this->Parent()->Name));
 
             $fields->addFieldToTab('Root.Main', TextField::create('Name'));
-            $fields->addFieldToTab('Root.Main', CheckboxField::create('ShowTitle'));
             $fields->addFieldToTab('Root.Main', UploadField::create('BgImage', 'Card image')->setFolderName('Card_Images'));
-            $fields->addFieldToTab('Root.Main', CheckboxField::create('isBgImage', 'Make as background image'));
             $fields->addFieldToTab('Root.Main', DropdownField::create('PageID', 'Select page to link', SiteTree::get()->map('ID','Title'))
                 ->setEmptyString('(Select one)')
                 ->setDescription('This will ignore if you have placed an External link.'));
             $fields->addFieldToTab('Root.Main', TextField::create('ExternalLink'));
-            $fields->addFieldToTab('Root.Main', DropdownField::create('SectionWidth', 'Select section size',
-                SectionWidth::get()->map('Title','Title'))->setRightTitle('E.g. col-md-6 is equivalent to a 50% width column size'));
+            $fields->addFieldToTab('Root.Main', DropdownField::create('Width', 'Select width size',
+                SectionWidth::get()->map('Name','Name'))->setRightTitle('Tip: col-lg-6 is equivalent to a 50% width size'));
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));
             $fields->addFieldToTab('Root.Animation', DropdownField::create('AnimationType','Select animation', Animation::get()->filter('Archived', false)->map('Name', 'Name')));
             $fields->addFieldToTab('Root.Main', CheckboxField::create('Archived'));
