@@ -24,7 +24,7 @@ namespace {
             'Content' => 'HTMLText'
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', new HTMLEditorField('Content'));
         }

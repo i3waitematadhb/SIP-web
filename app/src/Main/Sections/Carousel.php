@@ -20,7 +20,7 @@ namespace {
             'CarouselItems' => CarouselItem::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));
 
@@ -33,7 +33,7 @@ namespace {
             $fields->addFieldToTab('Root.Main', $editor);
         }
 
-        public function getVisibleItems()
+        public function getVisibleCarouselItems()
         {
             return $this->CarouselItems()->filter('Archived', false)->sort('Sort');
         }

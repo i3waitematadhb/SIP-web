@@ -21,7 +21,7 @@ namespace {
             'EventPage' => EventPage::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', DropdownField::create('DisplayStyle', 'Display style',
                 array(

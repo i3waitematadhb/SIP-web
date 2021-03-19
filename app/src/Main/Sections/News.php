@@ -19,7 +19,7 @@ namespace {
             'NewsPage' => NewsPage::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));
             $fields->addFieldToTab('Root.Main', ListboxField::create('NewsPage', 'Select news', NewsPage::get()->map('ID', 'Title')));

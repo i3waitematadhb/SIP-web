@@ -25,7 +25,7 @@ namespace {
             'Image'
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', UploadField::create('Image')->setFolderName('ImageWithText/Images'));
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));

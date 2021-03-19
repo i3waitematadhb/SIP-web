@@ -20,7 +20,7 @@ namespace {
             'TextIconItems' => TextIconItem::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', new HTMLEditorField('Content'));
             $config = GridFieldConfig_RecordEditor::create('999');

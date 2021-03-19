@@ -15,7 +15,7 @@ namespace {
             'SliderBannerItems' => SliderBannerItem::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $config = GridFieldConfig_RecordEditor::create('999');
             if ($this->SliderBannerItems()->Count()) {
@@ -26,7 +26,7 @@ namespace {
             $fields->addFieldToTab('Root.Main', $editor);
         }
 
-        public function getVisibleItems()
+        public function getVisibleSliderItems()
         {
             return $this->SliderBannerItems()->filter('Archived', false)->sort('Sort');
         }

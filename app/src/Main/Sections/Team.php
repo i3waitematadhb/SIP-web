@@ -26,7 +26,7 @@ namespace {
             'Teams' => TeamPage::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));
             $fields->addFieldToTab('Root.Main', ListboxField::create('Teams', 'Select members', TeamPage::get()->map('ID', 'Title')));

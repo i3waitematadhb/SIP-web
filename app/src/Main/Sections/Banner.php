@@ -23,7 +23,7 @@ namespace {
             'BannerImage',
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', UploadField::create('BannerImage')->setFolderName('Banner_Images'));
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));

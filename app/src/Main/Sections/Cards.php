@@ -23,7 +23,7 @@ namespace {
             'CardItems' => CardItem::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));
 
@@ -35,8 +35,8 @@ namespace {
             $gridConfig->addComponent(new GridFieldEditableColumns());
             $gridColumns = $gridConfig->getComponentByType(GridFieldEditableColumns::class);
             $gridColumns->setDisplayFields([
-                'ColumnSize' => [
-                    'title' => 'ColumnSize',
+                'Width' => [
+                    'title' => 'Width',
                     'callback' => function($record, $column, $grid) {
                         return DropdownField::create($column, $column, SectionWidth::get()->map('Name','Name'));
                     }
@@ -59,7 +59,7 @@ namespace {
             $fields->addFieldToTab('Root.Main', $gridField);
         }
 
-        public function getVisibleItems()
+        public function getVisibleCardItems()
         {
             return $this->owner->CardItems()->filter('Archived', false)->sort('Sort');
         }

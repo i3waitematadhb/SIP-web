@@ -15,7 +15,7 @@ namespace {
             'AccordionItems' => AccordionItem::class
         ];
 
-        public function getModuleCMSFields(FieldList $fields)
+        public function getSectionCMSFields(FieldList $fields)
         {
             $config = GridFieldConfig_RecordEditor::create('999');
             if ($this->AccordionItems()->Count()) {
