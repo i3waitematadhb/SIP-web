@@ -36,6 +36,20 @@ namespace {
             $fields->addFieldToTab('Root.Member', $editorMemberType);
 
             /*
+             * Animations
+             */
+            $configAnimation = GridFieldConfig_RecordEditor::create('999');
+            $editorAnimation = GridField::create('Animation', 'Animations', Animation::get(), $configAnimation);
+            $fields->addFieldToTab('Root.SectionSettings', $editorAnimation);
+
+            /*
+             * Section Width
+             */
+            $configWidth = GridFieldConfig_RecordEditor::create('999');
+            $editorWidth = GridField::create('SectionWidth', 'Width', SectionWidth::get(), $configWidth);
+            $fields->addFieldToTab('Root.SectionSettings', $editorWidth);
+
+            /*
              * Ethnicity
              */
             $configEthnicity = GridFieldConfig_RecordEditor::create('999');
