@@ -40,7 +40,7 @@ namespace {
             'Name',
             'DisplayType' => 'Section Type',
             'Width',
-            'Status'
+            'Status' => 'Status'
         ];
 
         public function getCMSFields()
