@@ -2,6 +2,8 @@
 
 namespace {
 
+    use SilverStripe\AssetAdmin\Forms\UploadField;
+    use SilverStripe\Assets\Image;
     use SilverStripe\Control\Email\Email;
     use SilverStripe\Control\RequestHandler;
     use SilverStripe\Forms\EmailField;
@@ -24,15 +26,23 @@ namespace {
             'Content' => 'HTMLText'
         ];
 
+        private static $has_one = [
+            'Image' => Image::class
+        ];
+
+        private static $owns = [
+            'Image'
+        ];
+
         public function getSectionCMSFields(FieldList $fields)
         {
-            $fields->addFieldToTab('Root.Main', new HTMLEditorField('Content'));
+            $fields->addFieldToTab('Root.Main', UploadField::create('Image'));
+            $fields->addFieldToTab('Root.Main', HTMLEditorField::create('Content'));
         }
 
         public function FeedbackForm(RequestHandler $controller = null)
         {
             $fields = FieldList::create([
-                TextField::create('Name', 'Name')->setAttribute('placeholder', 'Your Name'),
                 EmailField::create('Email', 'Email')->setAttribute('placeholder', 'Your Email'),
                 TextareaField::create('Message', 'Message')->setAttribute('placeholder', 'Your Message')
             ]);
@@ -42,7 +52,6 @@ namespace {
             ]);
 
             $validator = RequiredFields::create([
-                'Name',
                 'Email',
                 'Message'
             ]);
